@@ -6,7 +6,7 @@ import ExchangeService from './js/exchange-service';
 function getRates(usd, currency) {
   ExchangeService.getRates()
     .then(function (response) {
-      if (response) {
+      if (response.result === 'success') {
         printConversion(response, usd, currency);
       } else {
         printError(response, usd, currency);
@@ -18,7 +18,7 @@ function getRates(usd, currency) {
 function printConversion(response, usd, currency) {
   const h4 = document.createElement("h4");
   if (usd <= 0 || usd === undefined || currency === undefined) {
-    const errString = `Currency Not Found: Please enter a valid Number and Currency`;
+    const errString = `There was an error accessing exchange data: Please enter a valid Number and Currency`;
     h4.append(errString);
     document.querySelector("#output").append(h4);
   }
@@ -54,15 +54,15 @@ function printConversion(response, usd, currency) {
   }
   else {
     const h4 = document.createElement("h4");
-    const errString = `Currency Not Found: Please enter a valid Number and Currency`;
+    const errString = `There was an error accessing exchange data: Please enter a valid Number and Currency`;
     h4.append(errString);
     document.querySelector("#output").append(h4);
   }
 }
 
-function printError(error, usd) {
+function printError(error, usd, currency) {
   document.querySelector("#output").innerHTML = `There was an error accessing exchange data: ${error}.
-  Cannot convert ${usd}.`;
+  Cannot convert $${usd} to ${currency}.`;
 }
 
 function handleSubmit(event) {
