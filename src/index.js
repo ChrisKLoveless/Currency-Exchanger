@@ -38,6 +38,11 @@ function handleSubmit(event) {
   getRates(usd, currency);
 }
 
+function handleReset() {
+  document.location.reload();
+}
+
 window.addEventListener("load", function() {
-  this.document.querySelector("form").addEventListener("submit", handleSubmit);
+  document.querySelector("form").addEventListener("submit", handleSubmit);
+  this.document.querySelector("#reset").addEventListener("click", handleReset);
 });
