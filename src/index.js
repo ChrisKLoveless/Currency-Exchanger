@@ -13,37 +13,44 @@ function getRates(usd, currency) {
       }
     });
 }
-
-
-
 // UI LOGIC-------------------------------------------------------------------
 
 function printConversion(response, usd, currency) {
+  const h4 = document.createElement("h4");
   if (usd <= 0 || usd === undefined || currency === undefined) {
-    const h4 = document.createElement("h4");
     const errString = `Currency Not Found: Please enter a valid Number and Currency`;
     h4.append(errString);
     document.querySelector("#output").append(h4);
   }
   else if (currency === "AUD") {
-    let convertedCurrency = (usd * response.conversion_rates.AUD).toFixed(2);
-    document.querySelector("#output").innerHTML = `Your money is worth $${convertedCurrency} in Australian Dollars`;
+    const convertedCurrency = (usd * response.conversion_rates.AUD).toFixed(2);
+    const resultString = `Your money is worth $${convertedCurrency} in Australian Dollars`;
+    h4.append(resultString);
+    document.querySelector("#output").append(h4);
   }
   else if (currency === "CNY") {
-    let convertedCurrency = (usd * response.conversion_rates.CNY).toFixed(2);
-    document.querySelector("#output").innerHTML = `Your money is worth ${convertedCurrency} in Chinese Yuan`;
+    const convertedCurrency = (usd * response.conversion_rates.CNY).toFixed(2);
+    const resultString = `Your money is worth 元${convertedCurrency} in Chinese Yuan`;
+    h4.append(resultString);
+    document.querySelector("#output").append(h4);
   }
   else if (currency === "GBP") {
-    let convertedCurrency = (usd * response.conversion_rates.GBP).toFixed(2);
-    document.querySelector("#output").innerHTML = `Your money is worth $${convertedCurrency} in Pounds Sterling`;
+    const convertedCurrency = (usd * response.conversion_rates.GBP).toFixed(2);
+    const resultString = `Your money is worth £${convertedCurrency} in Pounds Sterling`;
+    h4.append(resultString);
+    document.querySelector("#output").append(h4);
   }
   else if (currency === "INR") {
-    let convertedCurrency = (usd * response.conversion_rates.INR).toFixed(2);
-    document.querySelector("#output").innerHTML = `Your money is worth $${convertedCurrency} in Indian Rupees`;
+    const convertedCurrency = (usd * response.conversion_rates.INR).toFixed(2);
+    const resultString = `Your money is worth ₹${convertedCurrency} in Indian Rupees`;
+    h4.append(resultString);
+    document.querySelector("#output").append(h4); 
   }
   else if (currency === "RUB") {
-    let convertedCurrency = (usd * response.conversion_rates.RUB).toFixed(2);
-    document.querySelector("#output").innerHTML = `Your money is worth $${convertedCurrency} in Russian Rubles`;
+    const convertedCurrency = (usd * response.conversion_rates.RUB).toFixed(2);
+    const resultString = `Your money is worth ₽${convertedCurrency} in Russian Rubles`;
+    h4.append(resultString);
+    document.querySelector("#output").append(h4); 
   }
   else {
     const h4 = document.createElement("h4");
