@@ -13,9 +13,16 @@
 
     <form>
       <label for="usd-input">Enter an amount</label>
-      <input type="text" name="usd-input" id="usd-input" placeholder="$USD">
+      <input type="number" name="usd-input" id="usd-input" placeholder="$USD">
       <label for="conv-input">Convert to:</label>
-      <input type="text" name="conv-input" id="conv-input" placeholder="AUD, GBP, RUB">
+      <select id="conv-input" class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
+        <option selected>Currency Select</option>
+        <option value="AUD">Australian Dollar</option>
+        <option value="CNY">Chinese Yuan</option>
+        <option value="GBP">Pounds Sterling</option>
+        <option value="INR">Indian Rupee</option>
+        <option value="RUB">Russian Ruble</option>
+      </select>
     </form>
 
     <div id="output"></div>

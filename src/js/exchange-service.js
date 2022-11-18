@@ -1,6 +1,6 @@
 export default class ExchangeService {
-  static getRates(usd) {
-    return fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD?=${usd}`)
+  static getRates(usd, currency) {
+    return fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD?=${usd}&=${currency}`)
       .then(function(response) {
         if (!response.ok) {
           const errorMessage = `${response.status} ${response.statusText}`;
@@ -13,4 +13,8 @@ export default class ExchangeService {
         return error;
       });
   }
+
+  // convertAUD(usd) {
+  //   return parseInt(usd * response.conversion_rates.AUD);
+  // }
 }

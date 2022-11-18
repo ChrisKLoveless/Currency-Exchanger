@@ -3,25 +3,26 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import ExchangeService from './js/exchange-service';
 
-function getRates(usd) {
+function getRates(usd, currency) {
   ExchangeService.getRates()
     .then(function(response) {
       if(response) {
-        convert(response, usd);
+        printConversion(response, usd, currency);
       } else {
-        printError(response, usd);
+        printError(response, usd, currency);
       }
     });
 }
 
-function convert(response, usd) {
-  const convertedCurrency =
-}
+
 
 // UI LOGIC-------------------------------------------------------------------
 
-function printConversion(response, usd) {
-  const convertedCurrency = 
+function printConversion(response, usd, currency) {
+  if(currency === "AUD") {
+    let convertedCurrency = usd * response.conversion_rates.AUD;
+    document.querySelector("#output").innerHTML = `Your money is worth ${convertedCurrency} in Australian Dollars`;
+  }
 }
 
 function printError(error, usd) {
