@@ -5,31 +5,44 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="assets/images/money-icon.png">
   <title>Currency Exchanger</title>
 </head>
 
 <body>
   <div class="container">
-    <h1 class="jumbotron">Currency Exchange API</h1>
-
+    <div class="jumbotron">
+      <h1 class="display-4">Currency Exchange API</h1>
+      <hr class="my-4">Use this app to convert US Dollars to selected currency!</hr>
+    </div>
     <form>
-      <label for="usd-input">Enter an amount</label>
-      <input type="number" name="usd-input" id="usd-input" placeholder="$USD">
-      <label for="conv-input">Convert to:</label>
-      <select id="conv-input" class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
-        <option selected>Currency Select</option>
-        <option value="AUD">$ Australian Dollar </option>
-        <option value="CNY">元 Chinese Yuan </option>
-        <option value="GBP">£ Pounds Sterling </option>
-        <option value="INR">₹ Indian Rupee</option>
-        <option value="RUB">₽ Russian Ruble</option>
-        <option value="DC">ड Drew Coin</option>
-      </select>
-      <button type="submit" class="btn btn-success">Convert</button>
-      <button type="reset" class="btn btn-dark" id="reset">Reset</button>
-    </form>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label for="usd-input" class="input-group-text">Enter an amount</label>
+        </div>
+        <input class="form-control" type="number" name="usd-input" id="usd-input" placeholder="$USD">
+      </div>
 
-    <div id="output"></div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label for="conv-input">Convert to:</label>
+        </div>
+        <select id="conv-input" class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
+          <option selected>Currency Select</option>
+          <option value="AUD">$ Australian Dollar </option>
+          <option value="CNY">元 Chinese Yuan </option>
+          <option value="GBP">£ Pounds Sterling </option>
+          <option value="INR">₹ Indian Rupee</option>
+          <option value="RUB">₽ Russian Ruble</option>
+          <option value="DC">ड Drew Coin</option>
+        </select>
+      </div>
+  <button type="submit" class="btn btn-success">Convert</button>
+  <button type="reset" class="btn btn-dark" id="reset">Reset</button>
+
+  </form>
+
+  <div id="output"></div>
 
   </div>
 </body>

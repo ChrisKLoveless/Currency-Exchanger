@@ -1,3 +1,19 @@
 body {
-  background-image: ;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.227),rgba(0, 0, 0, 0.2)), url("https://png.pngtree.com/back_origin_pic/03/88/06/20451a964fa12319a324f2e99aac9632.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  color: black;
+}
+
+.container {
+  margin-top: 2%;
+}
+
+.jumbotron {
+  background: rgba(204, 204, 204, 0.41);
+  font-weight: bold;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  height: 250px;
+  text-align: center;
 }
