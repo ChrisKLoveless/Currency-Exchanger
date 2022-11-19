@@ -1,6 +1,7 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
+import "animate.css";
 import ExchangeService from './js/exchange-service';
 
 function getRates(usd, currency) {
@@ -24,31 +25,31 @@ function printConversion(response, usd, currency) {
   }
   else if (currency === "AUD") {
     const convertedCurrency = (usd * response.conversion_rates.AUD).toFixed(2);
-    const resultString = `Your money is worth $${convertedCurrency} in Australian Dollars`;
+    const resultString = `$${usd} USD is equal to $${convertedCurrency} in Australian Dollars`;
     h4.append(resultString);
     document.querySelector("#output").append(h4);
   }
   else if (currency === "CNY") {
     const convertedCurrency = (usd * response.conversion_rates.CNY).toFixed(2);
-    const resultString = `Your money is worth 元${convertedCurrency} in Chinese Yuan`;
+    const resultString = `$${usd} USD is equal to 元${convertedCurrency} in Chinese Yuan`;
     h4.append(resultString);
     document.querySelector("#output").append(h4);
   }
   else if (currency === "GBP") {
     const convertedCurrency = (usd * response.conversion_rates.GBP).toFixed(2);
-    const resultString = `Your money is worth £${convertedCurrency} in Pounds Sterling`;
+    const resultString = `$${usd} USD is equal to £${convertedCurrency} in Pounds Sterling`;
     h4.append(resultString);
     document.querySelector("#output").append(h4);
   }
   else if (currency === "INR") {
     const convertedCurrency = (usd * response.conversion_rates.INR).toFixed(2);
-    const resultString = `Your money is worth ₹${convertedCurrency} in Indian Rupees`;
+    const resultString = `$${usd} USD is equal to ₹${convertedCurrency} in Indian Rupees`;
     h4.append(resultString);
     document.querySelector("#output").append(h4); 
   }
   else if (currency === "RUB") {
     const convertedCurrency = (usd * response.conversion_rates.RUB).toFixed(2);
-    const resultString = `Your money is worth ₽${convertedCurrency} in Russian Rubles`;
+    const resultString = `$${usd} USD is equal to ₽${convertedCurrency} in Russian Rubles`;
     h4.append(resultString);
     document.querySelector("#output").append(h4); 
   }
