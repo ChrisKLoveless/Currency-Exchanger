@@ -28,7 +28,7 @@ function printConversion(response, usd, currency) {
     const convertedCurrency = (usd * response.conversion_rates.AUD).toFixed(2);
     document.querySelector("#output").innerHTML = (`
     <div class="animate__animated animate__fadeInUp">
-      <h4>$${usd} USD is equal to $${convertedCurrency} in Australian Dollars</h4>
+      <h4>$${usd} USD is equal to $${convertedCurrency} Australian Dollars</h4>
     </div>
   `);
   }
@@ -36,7 +36,7 @@ function printConversion(response, usd, currency) {
     const convertedCurrency = (usd * response.conversion_rates.CNY).toFixed(2);
     document.querySelector("#output").innerHTML = (`
     <div class="animate__animated animate__fadeInUp">
-      <h4>$${usd} USD is equal to 元${convertedCurrency} in Chinese Yuan</h4>
+      <h4>$${usd} USD is equal to 元${convertedCurrency} Chinese Yuan</h4>
     </div>
   `);
   }
@@ -44,7 +44,7 @@ function printConversion(response, usd, currency) {
     const convertedCurrency = (usd * response.conversion_rates.GBP).toFixed(2);
     document.querySelector("#output").innerHTML = (`
     <div class="animate__animated animate__fadeInUp">
-      <h4>$${usd} USD is equal to £${convertedCurrency} in Pounds Sterling</h4>
+      <h4>$${usd} USD is equal to £${convertedCurrency} Pounds Sterling</h4>
     </div>
   `);
   }
@@ -52,7 +52,7 @@ function printConversion(response, usd, currency) {
     const convertedCurrency = (usd * response.conversion_rates.INR).toFixed(2);
     document.querySelector("#output").innerHTML = (`
     <div class="animate__animated animate__fadeInUp">
-      <h4>$${usd} USD is equal to ₹${convertedCurrency} in Indian Rupees</h4>
+      <h4>$${usd} USD is equal to ₹${convertedCurrency} Indian Rupees</h4>
     </div>
   `);
   }
@@ -60,7 +60,7 @@ function printConversion(response, usd, currency) {
     const convertedCurrency = (usd * response.conversion_rates.RUB).toFixed(2);
     document.querySelector("#output").innerHTML = (`
     <div class="animate__animated animate__fadeInUp">
-      <h4>$${usd} USD is equal to ₽${convertedCurrency} in Russian Rubles</h4>
+      <h4>$${usd} USD is equal to ₽${convertedCurrency} Russian Rubles</h4>
     </div>
   `);
   }
