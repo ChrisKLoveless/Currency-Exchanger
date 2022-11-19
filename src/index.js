@@ -17,47 +17,59 @@ function getRates(usd, currency) {
 // UI LOGIC-------------------------------------------------------------------
 
 function printConversion(response, usd, currency) {
-  const h4 = document.createElement("h4");
   if (usd <= 0 || usd === undefined || currency === undefined) {
-    const errString = `There was an error accessing exchange data: Please enter a valid Number and Currency`;
-    h4.append(errString);
-    document.querySelector("#output").append(h4);
+    document.querySelector("#output").innerHTML = (`
+    <div class="animate__animated animate__fadeInUp">
+      <h4>There was an error accessing exchange data: Please enter a valid Number and Currency</h4>
+    </div>
+  `);
   }
   else if (currency === "AUD") {
     const convertedCurrency = (usd * response.conversion_rates.AUD).toFixed(2);
-    const resultString = `$${usd} USD is equal to $${convertedCurrency} in Australian Dollars`;
-    h4.append(resultString);
-    document.querySelector("#output").append(h4);
+    document.querySelector("#output").innerHTML = (`
+    <div class="animate__animated animate__fadeInUp">
+      <h4>$${usd} USD is equal to $${convertedCurrency} in Australian Dollars</h4>
+    </div>
+  `);
   }
   else if (currency === "CNY") {
     const convertedCurrency = (usd * response.conversion_rates.CNY).toFixed(2);
-    const resultString = `$${usd} USD is equal to 元${convertedCurrency} in Chinese Yuan`;
-    h4.append(resultString);
-    document.querySelector("#output").append(h4);
+    document.querySelector("#output").innerHTML = (`
+    <div class="animate__animated animate__fadeInUp">
+      <h4>$${usd} USD is equal to 元${convertedCurrency} in Chinese Yuan</h4>
+    </div>
+  `);
   }
   else if (currency === "GBP") {
     const convertedCurrency = (usd * response.conversion_rates.GBP).toFixed(2);
-    const resultString = `$${usd} USD is equal to £${convertedCurrency} in Pounds Sterling`;
-    h4.append(resultString);
-    document.querySelector("#output").append(h4);
+    document.querySelector("#output").innerHTML = (`
+    <div class="animate__animated animate__fadeInUp">
+      <h4>$${usd} USD is equal to £${convertedCurrency} in Pounds Sterling</h4>
+    </div>
+  `);
   }
   else if (currency === "INR") {
     const convertedCurrency = (usd * response.conversion_rates.INR).toFixed(2);
-    const resultString = `$${usd} USD is equal to ₹${convertedCurrency} in Indian Rupees`;
-    h4.append(resultString);
-    document.querySelector("#output").append(h4); 
+    document.querySelector("#output").innerHTML = (`
+    <div class="animate__animated animate__fadeInUp">
+      <h4>$${usd} USD is equal to ₹${convertedCurrency} in Indian Rupees</h4>
+    </div>
+  `);
   }
   else if (currency === "RUB") {
     const convertedCurrency = (usd * response.conversion_rates.RUB).toFixed(2);
-    const resultString = `$${usd} USD is equal to ₽${convertedCurrency} in Russian Rubles`;
-    h4.append(resultString);
-    document.querySelector("#output").append(h4); 
+    document.querySelector("#output").innerHTML = (`
+    <div class="animate__animated animate__fadeInUp">
+      <h4>$${usd} USD is equal to ₽${convertedCurrency} in Russian Rubles</h4>
+    </div>
+  `);
   }
   else {
-    const h4 = document.createElement("h4");
-    const errString = `There was an error accessing exchange data: Please enter a valid Number and Currency`;
-    h4.append(errString);
-    document.querySelector("#output").append(h4);
+    document.querySelector("#output").innerHTML = (`
+    <div class="animate__animated animate__fadeInUp">
+      <h4>There was an error accessing exchange data: Please enter a valid Number and Currency</h4>
+    </div>
+  `);
   }
 }
 
